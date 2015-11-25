@@ -20,6 +20,6 @@ case object StartFetchNews
 
 case class NewsResult(key: String, news: Seq[NewsItem])
 
-case class FetchNewsItem(item: NewsItem)
+case class GetNewsItem(item: NewsItem)
 
 case object TaskDelay

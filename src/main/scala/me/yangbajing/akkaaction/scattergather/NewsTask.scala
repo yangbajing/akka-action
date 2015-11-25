@@ -36,7 +36,7 @@ class NewsTask(key: String, doneDuration: FiniteDuration) extends MetricActor {
         context.actorOf(SearchPageTask.props(self), "scatter-" + i) ! SearchPage(key)
       }
 
-    case FetchNewsItem(newsItem) =>
+    case GetNewsItem(newsItem) =>
       _newses ::= newsItem
       if (_newses.size == NewsTask.TASK_SIZE) {
         logger.debug(s"分散任务，${NewsTask.TASK_SIZE}个已全部完成")

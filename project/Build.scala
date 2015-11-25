@@ -44,8 +44,8 @@ object Build extends Build {
         _akkaSlf4j,
         _logback,
         _typesafeConfig,
-        //        _scalatest,
-        _scalaLogging))
+        _scalaLogging,
+        _scalatest))
 
   val _scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.4"
   val _scalatest = "org.scalatest" %% "scalatest" % "2.2.5" % "test"
