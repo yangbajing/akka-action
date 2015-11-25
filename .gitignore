@@ -1,0 +1,42 @@
+*~
+*.class
+*.log
+
+.~lock.*
+.*.swp
+.cache
+*.error
+.history
+.DS_Store
+.ensime
+.classpath
+.project
+.settings
+.Rhistory
+.target/
+.ensime_lucene/
+.worksheet/
+.metadata/
+.idea_modules/
+.idea/
+
+Backup/
+
+fine-food/web/src/main/webapp/upload/
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+cqust/jpkc/src/main/webapp/upload/
+
+# Scala-IDE specific
+.scala_dependencies
+
+# Sphinx rst
+*.pyc
+docs/_build/
+docs/_sphinx/exts/__pycache__/
