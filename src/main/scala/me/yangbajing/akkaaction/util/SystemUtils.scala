@@ -1,6 +1,7 @@
 package me.yangbajing.akkaaction.util
 
 import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
 
 /**
  * System Utils
@@ -8,4 +9,5 @@ import akka.actor.ActorSystem
  */
 object SystemUtils {
   implicit val system = ActorSystem("akka")
+  implicit val materializer = ActorMaterializer()
 }

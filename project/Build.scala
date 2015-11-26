@@ -40,6 +40,8 @@ object Build extends Build {
       AssemblyKeys.assemblyJarName in AssemblyKeys.assembly := "email-server.jar",
       mainClass in AssemblyKeys.assembly := Some("me.yangbajing.emailserver.Main"),
       libraryDependencies ++= Seq(
+        _json4sJackson,
+        _akkaHttp,
         _akkaActor,
         _akkaSlf4j,
         _logback,
@@ -66,6 +68,8 @@ object Build extends Build {
   val _json4sJackson = "org.json4s" %% "json4s-jackson" % "3.3.0"
 
   val _mongoScala = "org.mongodb.scala" %% "mongo-scala-driver" % "1.0.0"
+
+  val _cassandra = "com.datastax.cassandra" % "cassandra-driver-core" % "2.2.0-rc3"
 
   val _logback = "ch.qos.logback" % "logback-classic" % "1.1.3"
   val _commonsEmail = "org.apache.commons" % "commons-email" % "1.4"
