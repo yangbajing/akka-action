@@ -32,6 +32,7 @@ object Build extends Build {
       publishLocal :=(),
       publishTo := None,
       offline := true,
+      fork := true,
       resolvers ++= Seq(
         "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
         "Sonatype releases" at "http://oss.sonatype.org/content/repositories/releases",
