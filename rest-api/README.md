@@ -23,7 +23,7 @@ akka-action > runMain me.yangbajing.akkaaction.restapi.App
 
 - ./get-book-aa.sh：正常返回ID为aa的书
 - ./get-book-bb.sh：查找ID为bb的书返回404
-- ./post-book.sh：创建一本ID为bb书，返回201
+- ./post-book.sh：创建一本ID为bb的书，返回201
 - ./get-book-bb.sh：正确返回ID为bb的书
 - ./put-book.hs：正确更新ID为bb的书
 - ./put-book-invalid.sh：无效的更新ID为aa的书，返回409

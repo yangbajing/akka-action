@@ -44,14 +44,14 @@ object ApiRoute extends StrictLogging {
 
         complete(
           StatusCodes.getForKey(e.errcode) getOrElse StatusCodes.InternalServerError,
-          JObject("errcode" -> JInt(e.errcode), "errmsg" -> JString(e.errmsg)))
+          Map("errcode" -> e.errcode, "errmsg" -> e.errmsg))
       }
     case e: Exception =>
       extractRequest { req =>
         logger.error(req.toString, e)
         complete(
           StatusCodes.InternalServerError,
-          JObject("errcode" -> JInt(500), "errmsg" -> JString(e.getLocalizedMessage)))
+          Map("errcode" -> 500, "errmsg" -> e.getLocalizedMessage))
       }
   }
 

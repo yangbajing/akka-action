@@ -2,18 +2,18 @@ package me.yangbajing.akkaaction.util
 
 import java.time.{LocalDate, LocalDateTime}
 
-import akka.http.scaladsl.marshalling.{ToEntityMarshaller, Marshaller}
-import akka.http.scaladsl.model.{ContentType, MediaTypes, HttpCharsets}
+import akka.http.scaladsl.marshalling.{Marshaller, ToEntityMarshaller}
+import akka.http.scaladsl.model.{HttpCharsets, MediaTypes}
 import akka.http.scaladsl.unmarshalling.{FromEntityUnmarshaller, Unmarshaller}
 import akka.stream.Materializer
-import org.json4s.{Formats, DefaultFormats, CustomSerializer}
 import org.json4s.JsonAST.{JNull, JString}
 import org.json4s.jackson.Serialization
+import org.json4s.{CustomSerializer, DefaultFormats, Formats}
 
 /**
- * Json Support
- * Created by Yang Jing (yangbajing@gmail.com) on 2015-11-26.
- */
+  * Json Support
+  * Created by Yang Jing (yangbajing@gmail.com) on 2015-11-26.
+  */
 trait JsonSupport {
   implicit val jsonFormats: Formats = DefaultFormats + new LocalDateTimeSerializer + new LocalDateSerializer
   implicit val jsonSerialization = Serialization
@@ -27,8 +27,7 @@ trait JsonSupport {
       }
 
   implicit def json4sMarshaller[A <: AnyRef]: ToEntityMarshaller[A] =
-    Marshaller.StringMarshaller.wrap(ContentType(MediaTypes.`application/json`, HttpCharsets.`UTF-8`))(v =>
-      jsonSerialization.write[A](v))
+    Marshaller.StringMarshaller.wrap(MediaTypes.`application/json`)(v => jsonSerialization.write[A](v))
 
 }
 

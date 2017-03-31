@@ -16,7 +16,7 @@ object Build extends Build {
       organization := "me.yangbajing",
       organizationHomepage := Some(new URL("https://github.com/yangbajing/akka-action")),
       startYear := Some(2015),
-      scalaVersion := "2.11.7",
+      scalaVersion := "2.11.8",
       scalacOptions ++= Seq(
         "-encoding", "utf8",
         "-unchecked",
@@ -50,31 +50,29 @@ object Build extends Build {
         _scalaLogging,
         _scalatest))
 
-  val _scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.4"
-  val _scalatest = "org.scalatest" %% "scalatest" % "2.2.5" % "test"
+  val _scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.5"
+  val _scalatest = "org.scalatest" %% "scalatest" % "2.2.6" % "test"
   val _typesafeConfig = "com.typesafe" % "config" % "1.3.0"
-  val _scalaLogging = ("com.typesafe.scala-logging" %% "scala-logging" % "3.1.0").exclude("org.scala-lang", "scala-library").exclude("org.scala-lang", "scala-reflect")
+  val _scalaLogging = ("com.typesafe.scala-logging" %% "scala-logging" % "3.4.0").exclude("org.scala-lang", "scala-library").exclude("org.scala-lang", "scala-reflect")
 
-  val verAkkaHttp = "2.0-M1"
-  val _akkaStream = "com.typesafe.akka" %% "akka-stream-experimental" % verAkkaHttp
-  val _akkaHttpCore = "com.typesafe.akka" %% "akka-http-core-experimental" % verAkkaHttp
-  val _akkaHttp = "com.typesafe.akka" %% "akka-http-experimental" % verAkkaHttp
+  val verAkka = "2.4.8"
 
-  val verAkka = "2.3.14"
+  val _akkaStream = "com.typesafe.akka" %% "akka-stream-experimental" % verAkka
+  val _akkaHttp = "com.typesafe.akka" %% "akka-http-experimental" % verAkka
   val _akkaActor = "com.typesafe.akka" %% "akka-actor" % verAkka
   val _akkaSlf4j = "com.typesafe.akka" %% "akka-slf4j" % verAkka
 
-  val _redisclient = "net.debasishg" %% "redisclient" % "3.0"
+  val _redisclient = "net.debasishg" %% "redisclient" % "3.1"
 
-  val _json4sJackson = "org.json4s" %% "json4s-jackson" % "3.3.0"
+  val _json4sJackson = "org.json4s" %% "json4s-jackson" % "3.4.0"
 
-  val _mongoScala = "org.mongodb.scala" %% "mongo-scala-driver" % "1.0.0"
+  val _mongoScala = "org.mongodb.scala" %% "mongo-scala-driver" % "1.1.1"
 
-  val _cassandra = "com.datastax.cassandra" % "cassandra-driver-core" % "2.2.0-rc3"
+  val _cassandra = "com.datastax.cassandra" % "cassandra-driver-core" % "3.0.2"
 
-  val _logback = "ch.qos.logback" % "logback-classic" % "1.1.3"
+  val _logback = "ch.qos.logback" % "logback-classic" % "1.1.7"
   val _commonsEmail = "org.apache.commons" % "commons-email" % "1.4"
-  val _guava = "com.google.guava" % "guava" % "18.0"
+  val _guava = "com.google.guava" % "guava" % "19.0"
 
 }
 

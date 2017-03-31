@@ -42,3 +42,4 @@ cqust/jpkc/src/main/webapp/upload/
 *.pyc
 docs/_build/
 docs/_sphinx/exts/__pycache__/
+project/project/
