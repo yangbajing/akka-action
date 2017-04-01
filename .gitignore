@@ -1,4 +1,4 @@
-/logs
+logs/
 app.pid
 *~
 *.class
@@ -33,7 +33,6 @@ lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
-cqust/jpkc/src/main/webapp/upload/
 
 # Scala-IDE specific
 .scala_dependencies
@@ -43,3 +42,4 @@ cqust/jpkc/src/main/webapp/upload/
 docs/_build/
 docs/_sphinx/exts/__pycache__/
 project/project/
+
