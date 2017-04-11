@@ -3,20 +3,22 @@ package starter.akka.http.demo01
 import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
 import akka.http.scaladsl.server.{HttpApp, Route}
 
-/**
-  * Created by Yang Jing (yangbajing@gmail.com) on 2017-04-01.
-  */
-
-/**
-  * Created by Yang Jing (yangbajing@gmail.com) on 2017-04-01.
-  */
 class WebServer extends HttpApp {
+
   def route: Route =
     path("hello") {
       get {
         complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Say hello to akka-http</h1>"))
       }
-    }
+    } ~
+      path("book") {
+        get {
+          parameters('name.as[Option[String]], 'isbn.as[Option[String]], 'author.as[Option[String]]) {
+            (maybeName, maybeIsbn, maybeAuthor) =>
+              complete(s"name: $maybeName, isbn: $maybeIsbn, author: $maybeAuthor")
+          }
+        }
+      }
 
   def traditionRoute: Route = {
     val resp = complete("result")
@@ -26,7 +28,7 @@ class WebServer extends HttpApp {
 
 }
 
-object StartBoot {
+object StartBoot01 {
 
   def main(args: Array[String]): Unit = {
     val server = new WebServer

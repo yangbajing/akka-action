@@ -6,7 +6,7 @@ lazy val root = Project(id = "akka-http-starter", base = file("."))
     organizationHomepage := Some(url("https://yangbajing.me")),
     homepage := Some(url("http://yangbajing.me")),
     startYear := Some(2017),
-    scalaVersion := "2.12.1",
+    scalaVersion := "2.11.8",
     scalacOptions ++= Seq(
       "-deprecation",
       "-encoding", "UTF-8",
@@ -44,4 +44,3 @@ lazy val root = Project(id = "akka-http-starter", base = file("."))
       "org.scalatest" %% "scalatest" % "3.0.1" % "test"
     )
   )
-
